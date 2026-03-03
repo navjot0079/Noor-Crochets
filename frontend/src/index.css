@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-cream;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-blush rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @apply bg-cream text-darkBrown font-sans;
+    margin: 0;
+    padding: 0;
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Floating Animation */
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Button Ripple Effect */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFD1DC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Card Hover Effects */
+.card-hover {
+    @apply transition-all duration-300 ease-in-out;
+}
+
+.card-hover:hover {
+    @apply transform -translate-y-2 shadow-2xl;
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 3px solid rgba(212, 175, 55, 0.1);
+    border-top: 3px solid #D4AF37;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+/* Custom Input Focus */
+input:focus,
+textarea:focus,
+select:focus {
+    @apply outline-none ring-2 ring-gold ring-opacity-50;
+}
+
+/* Parallax Container */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Hero Text Animation */
+@keyframes textFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+        text-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        text-shadow: 0 15px 30px rgba(212, 175, 55, 0.5);
+    }
+}
+
+.hero-text {
+    animation: textFloat 3s ease-in-out infinite;
+}
+
+/* Image Hover Zoom */
+.img-zoom {
+    @apply overflow-hidden;
+}
+
+.img-zoom img {
+    @apply transition-transform duration-500 ease-in-out;
+}
+
+.img-zoom:hover img {
+    @apply transform scale-110;
+}
+
+/* Fade In On Scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
