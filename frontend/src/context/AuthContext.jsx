@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
@@ -15,6 +15,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [onLoginCallbacks, setOnLoginCallbacks] = useState([]);
 
     useEffect(() => {
         // Check if user is logged in
@@ -25,12 +26,35 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
     }, []);
 
+    // Register callback to be called after login
+    const onLogin = useCallback((callback) => {
+        setOnLoginCallbacks((prev) => [...prev, callback]);
+        return () => {
+            setOnLoginCallbacks((prev) => prev.filter((cb) => cb !== callback));
+        };
+    }, []);
+
+    // Execute all login callbacks
+    const executeLoginCallbacks = useCallback(async () => {
+        for (const callback of onLoginCallbacks) {
+            try {
+                await callback();
+            } catch (error) {
+                console.error('Login callback error:', error);
+            }
+        }
+    }, [onLoginCallbacks]);
+
     const login = async (email, password) => {
         try {
             const { data } = await axios.post('/api/auth/login', { email, password });
             localStorage.setItem('userInfo', JSON.stringify(data));
             setUser(data);
             toast.success('Logged in successfully!');
+
+            // Execute callbacks (like cart sync)
+            await executeLoginCallbacks();
+
             return data;
         } catch (error) {
             const message = error.response?.data?.message || 'Login failed';
@@ -45,6 +69,10 @@ export const AuthProvider = ({ children }) => {
             localStorage.setItem('userInfo', JSON.stringify(data));
             setUser(data);
             toast.success('Registration successful!');
+
+            // Execute callbacks (like cart sync)
+            await executeLoginCallbacks();
+
             return data;
         } catch (error) {
             const message = error.response?.data?.message || 'Registration failed';
@@ -86,6 +114,7 @@ export const AuthProvider = ({ children }) => {
         register,
         logout,
         updateProfile,
+        onLogin,
     };
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

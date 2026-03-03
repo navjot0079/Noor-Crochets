@@ -3,11 +3,14 @@ import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
+import CartDrawer from './components/CartDrawer';
+import CartSync from './components/CartSync';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Collections from './pages/Collections';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
+import CheckoutPage from './pages/CheckoutPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
@@ -51,7 +54,9 @@ function App() {
                 }}
             />
 
+            <CartSync />
             <Navbar />
+            <CartDrawer />
 
             <main className="flex-grow">
                 <Routes>
@@ -60,6 +65,7 @@ function App() {
                     <Route path="/collections" element={<Collections />} />
                     <Route path="/product/:id" element={<ProductDetails />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/checkout" element={<CheckoutPage />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/about" element={<About />} />

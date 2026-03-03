@@ -28,13 +28,30 @@ export const productAPI = {
 // Order APIs
 export const orderAPI = {
     create: (orderData) => axios.post(`${API_URL}/orders`, orderData, getAuthConfig()),
+    createDirect: (orderData) => axios.post(`${API_URL}/orders/direct`, orderData, getAuthConfig()),
     getMyOrders: () => axios.get(`${API_URL}/orders/myorders`, getAuthConfig()),
     getById: (id) => axios.get(`${API_URL}/orders/${id}`, getAuthConfig()),
+    getByNumber: (orderNumber) => axios.get(`${API_URL}/orders/number/${orderNumber}`, getAuthConfig()),
     getAll: () => axios.get(`${API_URL}/orders`, getAuthConfig()),
     updateToPaid: (id, paymentResult) =>
         axios.put(`${API_URL}/orders/${id}/pay`, paymentResult, getAuthConfig()),
-    updateStatus: (id, status) =>
-        axios.put(`${API_URL}/orders/${id}/status`, { status }, getAuthConfig()),
+    updateStatus: (id, status, note) =>
+        axios.put(`${API_URL}/orders/${id}/status`, { status, note }, getAuthConfig()),
+    cancel: (id, reason) =>
+        axios.put(`${API_URL}/orders/${id}/cancel`, { reason }, getAuthConfig()),
+};
+
+// Cart APIs
+export const cartAPI = {
+    get: () => axios.get(`${API_URL}/cart`, getAuthConfig()),
+    add: (item) => axios.post(`${API_URL}/cart/add`, item, getAuthConfig()),
+    update: (item) => axios.put(`${API_URL}/cart/update`, item, getAuthConfig()),
+    remove: (item) => axios.delete(`${API_URL}/cart/remove`, {
+        ...getAuthConfig(),
+        data: item
+    }),
+    clear: () => axios.delete(`${API_URL}/cart/clear`, getAuthConfig()),
+    sync: (items) => axios.post(`${API_URL}/cart/sync`, { items }, getAuthConfig()),
 };
 
 // Custom Order APIs

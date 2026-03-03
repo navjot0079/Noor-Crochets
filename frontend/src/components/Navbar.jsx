@@ -9,7 +9,7 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { user, logout } = useAuth();
-    const { getCartCount } = useCart();
+    const { getCartCount, openCart } = useCart();
     const location = useLocation();
 
     useEffect(() => {
@@ -74,7 +74,7 @@ const Navbar = () => {
                     {/* Right Side Icons */}
                     <div className="flex items-center gap-4">
                         {/* Cart */}
-                        <Link to="/cart" className="relative">
+                        <button onClick={openCart} className="relative">
                             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                                 <FiShoppingCart className="text-2xl text-darkBrown hover:text-gold transition-colors" />
                                 {getCartCount() > 0 && (
@@ -88,7 +88,7 @@ const Navbar = () => {
                                     </motion.span>
                                 )}
                             </motion.div>
-                        </Link>
+                        </button>
 
                         {/* User Menu */}
                         {user ? (
