@@ -26,7 +26,7 @@ const PRODUCTS = [
         categoryId: 'plushies',
         basePrice: 35,
         description: 'A soft and cuddly bear plushie perfect for hugging. Handcrafted with love.',
-        image: 'https://images.pexels.com/photos/6850747/pexels-photo-6850747.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: "/src/assets/images/bear.jpg",
     },
     {
         id: 'plush-002',
@@ -35,7 +35,7 @@ const PRODUCTS = [
         categoryId: 'plushies',
         basePrice: 32,
         description: 'Adorable bunny with floppy ears. Made with premium soft yarn.',
-        image: 'https://images.pexels.com/photos/6850760/pexels-photo-6850760.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: "/src/assets/images/Rabbit.jpg",
     },
     {
         id: 'plush-003',
@@ -44,7 +44,7 @@ const PRODUCTS = [
         categoryId: 'plushies',
         basePrice: 40,
         description: 'Gentle elephant plushie with adorable trunk. Perfect nursery companion.',
-        image: 'https://images.pexels.com/photos/6850763/pexels-photo-6850763.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: "/src/assets/images/elephant.jpg",
     },
     // Bags - Crochet bags and purses
     {
@@ -54,7 +54,7 @@ const PRODUCTS = [
         categoryId: 'bags',
         basePrice: 55,
         description: 'Spacious handwoven tote bag perfect for farmers markets and beach days.',
-        image: 'https://images.pexels.com/photos/6621329/pexels-photo-6621329.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: "/src/assets/images/pinkbag.jpg",
     },
     {
         id: 'bag-002',
@@ -63,7 +63,7 @@ const PRODUCTS = [
         categoryId: 'bags',
         basePrice: 42,
         description: 'Cute crossbody purse with adjustable strap. Perfect for essentials.',
-        image: 'https://images.pexels.com/photos/6621472/pexels-photo-6621472.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: "/src/assets/images/bluebag.jpg",
     },
     {
         id: 'bag-003',
@@ -72,36 +72,36 @@ const PRODUCTS = [
         categoryId: 'bags',
         basePrice: 38,
         description: 'Summer vibes clutch bag with tassel details. Handcrafted perfection.',
-        image: 'https://images.pexels.com/photos/6621491/pexels-photo-6621491.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: "/src/assets/images/smallbag.jpg",
     },
     // Toys - Crochet baby toys
     {
-        id: 'toy-001',
-        name: 'Rainbow Stacking Rings',
-        category: 'Toys',
-        categoryId: 'toys',
-        basePrice: 28,
-        description: 'Colorful stacking rings toy for babies. Safe and machine washable.',
-        image: 'https://images.pexels.com/photos/6621356/pexels-photo-6621356.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-    },
-    {
-        id: 'toy-002',
-        name: 'Sensory Play Ball Set',
-        category: 'Toys',
-        categoryId: 'toys',
-        basePrice: 25,
-        description: 'Set of 3 textured balls for sensory development. Vibrant colors.',
-        image: 'https://images.pexels.com/photos/3933250/pexels-photo-3933250.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-    },
-    {
-        id: 'toy-003',
-        name: 'Rattle Teether Combo',
-        category: 'Toys',
-        categoryId: 'toys',
-        basePrice: 22,
-        description: 'Safe crocheted rattle with natural wood teether ring.',
-        image: 'https://images.pexels.com/photos/6621342/pexels-photo-6621342.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-    },
+    id: 'bouquet-001',
+    name: 'Classic Red Rose Bouquet',
+    category: 'Bouquets',
+    categoryId: 'bouquets',
+    basePrice: 35,
+    description: 'Beautiful bouquet of fresh red roses wrapped in elegant paper. Perfect for romantic occasions.',
+    image: "/src/assets/images/redrose.jpg",
+},
+{
+    id: 'bouquet-002',
+    name: 'Sunflower Delight Bouquet',
+    category: 'Bouquets',
+    categoryId: 'bouquets',
+    basePrice: 30,
+    description: 'Bright sunflower bouquet symbolizing happiness and positivity.',
+    image: 'src/assets/images/bouquet.jpg',
+},
+{
+    id: 'bouquet-003',
+    name: 'Mixed Flower Celebration Bouquet',
+    category: 'Bouquets',
+    categoryId: 'bouquets',
+    basePrice: 40,
+    description: 'A colorful mix of roses, lilies, and daisies arranged for celebrations and special moments.',
+    image: 'src/assets/images/mixboquet.jpg',
+},
     // Accessories - Crochet hair accessories
     {
         id: 'acc-001',
@@ -110,7 +110,7 @@ const PRODUCTS = [
         categoryId: 'accessories',
         basePrice: 18,
         description: 'Set of 3 trendy crochet headbands in earthy tones.',
-        image: 'https://images.pexels.com/photos/6621468/pexels-photo-6621468.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/headband.jpg',
     },
     {
         id: 'acc-002',
@@ -118,8 +118,8 @@ const PRODUCTS = [
         category: 'Accessories',
         categoryId: 'accessories',
         basePrice: 15,
-        description: 'Pack of 5 soft crochet scrunchies in pastel colors.',
-        image: 'https://images.pexels.com/photos/6621462/pexels-photo-6621462.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        description: 'Pack of 5 soft crochet keychains in pastel colors.',
+        image: 'src/assets/images/penguin.jpg',
     },
     {
         id: 'acc-003',
@@ -128,7 +128,7 @@ const PRODUCTS = [
         categoryId: 'accessories',
         basePrice: 12,
         description: 'Delicate flower hair clips. Perfect for any occasion.',
-        image: 'https://images.pexels.com/photos/3933258/pexels-photo-3933258.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/clips.jpg',
     },
     // Animals - Amigurumi crochet animals
     {
@@ -138,7 +138,7 @@ const PRODUCTS = [
         categoryId: 'animals',
         basePrice: 38,
         description: 'Charming woodland fox with fluffy tail. Hand-stitched details.',
-        image: 'https://images.pexels.com/photos/6850753/pexels-photo-6850753.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/fox.avif',
     },
     {
         id: 'animal-002',
@@ -147,7 +147,7 @@ const PRODUCTS = [
         categoryId: 'animals',
         basePrice: 45,
         description: 'Majestic blue whale in soft cotton yarn. Ocean nursery essential.',
-        image: 'https://images.pexels.com/photos/6850745/pexels-photo-6850745.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/whale.jpg',
     },
     {
         id: 'animal-003',
@@ -156,7 +156,7 @@ const PRODUCTS = [
         categoryId: 'animals',
         basePrice: 24,
         description: 'Delicate butterfly with colorful wings. Wall decor or toy.',
-        image: 'https://images.pexels.com/photos/6850768/pexels-photo-6850768.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/butterfly.jpg',
     },
     // Wearables - Crochet wearables
     {
@@ -166,7 +166,7 @@ const PRODUCTS = [
         categoryId: 'wearables',
         basePrice: 28,
         description: 'Warm and stylish beanie with pom-pom. Fits all head sizes.',
-        image: 'https://images.pexels.com/photos/6621335/pexels-photo-6621335.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/cap.webp',
     },
     {
         id: 'wear-002',
@@ -175,7 +175,7 @@ const PRODUCTS = [
         categoryId: 'wearables',
         basePrice: 48,
         description: 'Luxuriously soft infinity scarf in neutral tones.',
-        image: 'https://images.pexels.com/photos/6621484/pexels-photo-6621484.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/infinityscarf.webp',
     },
     {
         id: 'wear-003',
@@ -184,7 +184,7 @@ const PRODUCTS = [
         categoryId: 'wearables',
         basePrice: 22,
         description: 'Practical and stylish fingerless gloves for typing and texting.',
-        image: 'https://images.pexels.com/photos/6621339/pexels-photo-6621339.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/gloves.jpg',
     },
     // Home Decor - Crochet home items
     {
@@ -194,7 +194,7 @@ const PRODUCTS = [
         categoryId: 'home-decor',
         basePrice: 65,
         description: 'Stunning bohemian wall art piece. Statement maker for any room.',
-        image: 'https://images.pexels.com/photos/4992630/pexels-photo-4992630.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/windspinner.webp',
     },
     {
         id: 'home-002',
@@ -203,7 +203,7 @@ const PRODUCTS = [
         categoryId: 'home-decor',
         basePrice: 24,
         description: 'Set of 6 elegant crochet coasters. Protects surfaces in style.',
-        image: 'https://images.pexels.com/photos/6621365/pexels-photo-6621365.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/sunflowercoster.jpg',
     },
     {
         id: 'home-003',
@@ -212,7 +212,7 @@ const PRODUCTS = [
         categoryId: 'home-decor',
         basePrice: 42,
         description: 'Textured pillow cover with modern geometric pattern.',
-        image: 'https://images.pexels.com/photos/6621348/pexels-photo-6621348.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/pillow.jpg',
     },
     // Clothes - Crochet clothing
     {
@@ -222,7 +222,7 @@ const PRODUCTS = [
         categoryId: 'clothes',
         basePrice: 55,
         description: 'Breezy crochet crop top perfect for summer festivals.',
-        image: 'https://images.pexels.com/photos/6621478/pexels-photo-6621478.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/croptop.jpg',
     },
     {
         id: 'cloth-002',
@@ -231,7 +231,7 @@ const PRODUCTS = [
         categoryId: 'clothes',
         basePrice: 38,
         description: 'Adorable baby cardigan with wooden buttons. Sizes 0-24 months.',
-        image: 'https://images.pexels.com/photos/6621494/pexels-photo-6621494.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/cardigan.jpg',
     },
     {
         id: 'cloth-003',
@@ -240,7 +240,7 @@ const PRODUCTS = [
         categoryId: 'clothes',
         basePrice: 62,
         description: 'Retro-inspired granny square vest. Timeless fashion piece.',
-        image: 'https://images.pexels.com/photos/3933264/pexels-photo-3933264.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
+        image: 'src/assets/images/vest.jpg',
     },
 ];
 
