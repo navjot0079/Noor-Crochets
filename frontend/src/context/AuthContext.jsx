@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
+import { authAPI } from '../utils/api';
 import toast from 'react-hot-toast';
 
 const AuthContext = createContext();
@@ -47,7 +48,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const { data } = await axios.post('/api/auth/login', { email, password });
+            const { data } = await authAPI.login({ email, password });
             localStorage.setItem('userInfo', JSON.stringify(data));
             setUser(data);
             toast.success('Logged in successfully!');
@@ -65,7 +66,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (name, email, password) => {
         try {
-            const { data } = await axios.post('/api/auth/register', { name, email, password });
+            const { data } = await authAPI.register({ name, email, password });
             localStorage.setItem('userInfo', JSON.stringify(data));
             setUser(data);
             toast.success('Registration successful!');
@@ -89,13 +90,7 @@ export const AuthProvider = ({ children }) => {
 
     const updateProfile = async (userData) => {
         try {
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${user.token}`,
-                },
-            };
-            const { data } = await axios.put('/api/auth/profile', userData, config);
+            const { data } = await authAPI.updateProfile(userData);
             localStorage.setItem('userInfo', JSON.stringify(data));
             setUser(data);
             toast.success('Profile updated successfully!');

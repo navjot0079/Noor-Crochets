@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://noor-crochets-xy6dgovgt-navjotsinghsaini718-8773s-projects.vercel.app/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://noor-crochets.onrender.com/api';
 
 // Get auth config
 const getAuthConfig = () => {
