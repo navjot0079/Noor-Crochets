@@ -41,6 +41,11 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/custom-orders', customOrderRoutes);
 
+// Root route
+app.get('/', (req, res) => {
+    res.json({ message: 'Welcome to Noor Crochets API' });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({ status: 'OK', message: 'Server is running' });
